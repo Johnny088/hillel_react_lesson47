@@ -10,8 +10,8 @@ export const HabitsPage = () => {
   return (
     <div className={css.container}>
       <h1>Todays tasks</h1>
+      {habits.length === 0 && <HabitsEmptyState />}
       <ul>
-        {habits.length === 0 && <HabitsEmptyState />}
         {habits.length > 0 &&
           habits.map(habit => <HabitItem key={habit.id} item={habit} />)}
       </ul>

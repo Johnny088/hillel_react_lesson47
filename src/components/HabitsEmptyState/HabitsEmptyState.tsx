@@ -1,7 +1,7 @@
 export const HabitsEmptyState = () => {
   return (
-    <li>
+    <div>
       <p>There's not any task for today yet</p>
-    </li>
+    </div>
   );
 };
