@@ -8,7 +8,13 @@ export const useHabitStore = create<HabitStore>()(
       return {
         habits: [],
         addHabit: (newHabit: Habit) =>
-          set(state => ({ habits: [...state.habits, newHabit] })),
+          set(state => {
+            if (newHabit.habit.trim() === '') {
+              return { habits: [...state.habits] };
+            }
+            return { habits: [...state.habits, newHabit] };
+          }),
+
         changeBoxState: (id: number) =>
           set(state => ({
             habits: state.habits.map(habit =>
@@ -19,7 +25,7 @@ export const useHabitStore = create<HabitStore>()(
           })),
         removeHabit: (id: number) =>
           set(state => ({
-            habits: state.habits.filter(habit => habit.id != id),
+            habits: state.habits.filter(habit => habit.id !== id),
           })),
       };
     },
