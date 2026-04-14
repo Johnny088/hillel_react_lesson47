@@ -2,6 +2,7 @@ import { AddNewHabitForm } from '../../components/AddNewHabitForm/AddNewHabitFor
 import { HabitItem } from '../../components/HabitItem/HabitItem';
 import css from './habitsPage.module.css';
 import { selectHabits, useHabitStore } from '../../stores/habitStore';
+import { HabitsEmptyState } from '../../components/HabitsEmptyState/HabitsEmptyState';
 
 export const HabitsPage = () => {
   const habits = useHabitStore(selectHabits);
@@ -10,7 +11,7 @@ export const HabitsPage = () => {
     <div className={css.container}>
       <h1>Todays tasks</h1>
       <ul>
-        {habits.length === 0 && <p>There's not any task for today yet</p>}
+        {habits.length === 0 && <HabitsEmptyState />}
         {habits.length > 0 &&
           habits.map(habit => <HabitItem key={habit.id} item={habit} />)}
       </ul>
