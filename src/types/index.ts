@@ -4,10 +4,9 @@ export type Habit = {
   id: number;
 };
 export interface HabitStore {
-  // habit: string;
-  // isChecked: boolean;
-  // id: number;
   habits: Habit[];
 
   addHabit: (habit: Habit) => void;
+
+  changeBoxState: (id: number) => void;
 }

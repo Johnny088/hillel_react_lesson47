@@ -1,14 +1,22 @@
 import { create } from 'zustand';
 import type { Habit, HabitStore } from '../types';
 import { persist } from 'zustand/middleware';
-persist;
 
-export const UseHabitStore = create<HabitStore>()(
+export const useHabitStore = create<HabitStore>()(
   persist(
     set => {
       return {
         habits: [],
-        addHabit: (newHabit: Habit) => {},
+        addHabit: (newHabit: Habit) =>
+          set(state => ({ habits: [...state.habits, newHabit] })),
+        changeBoxState: (id: number) =>
+          set(state => ({
+            habits: state.habits.map(habit =>
+              habit.id === id
+                ? { ...habit, isChecked: !habit.isChecked }
+                : habit,
+            ),
+          })),
       };
     },
 
@@ -16,13 +24,13 @@ export const UseHabitStore = create<HabitStore>()(
       name: 'habits',
       partialize: state => {
         return {
-          habit: state.habit,
-          id: state.id,
-          isChecked: state.isChecked,
+          habits: state.habits,
         };
       },
     },
   ),
 );
 
-export const selectlang = (state: HabitStore) => state.habits;
+export const selectHabits = (state: HabitStore) => state.habits;
+export const selectAddHabit = (state: HabitStore) => state.addHabit;
+export const selectToggleState = (state: HabitStore) => state.changeBoxState;
