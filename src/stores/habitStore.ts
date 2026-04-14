@@ -17,6 +17,10 @@ export const useHabitStore = create<HabitStore>()(
                 : habit,
             ),
           })),
+        removeHabit: (id: number) =>
+          set(state => ({
+            habits: state.habits.filter(habit => habit.id != id),
+          })),
       };
     },
 
@@ -34,3 +38,4 @@ export const useHabitStore = create<HabitStore>()(
 export const selectHabits = (state: HabitStore) => state.habits;
 export const selectAddHabit = (state: HabitStore) => state.addHabit;
 export const selectToggleState = (state: HabitStore) => state.changeBoxState;
+export const selectRemoveHabit = (state: HabitStore) => state.removeHabit;

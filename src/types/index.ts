@@ -9,4 +9,5 @@ export interface HabitStore {
   addHabit: (habit: Habit) => void;
 
   changeBoxState: (id: number) => void;
+  removeHabit: (id: number) => void;
 }
