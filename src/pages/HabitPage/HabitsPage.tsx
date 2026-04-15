@@ -13,7 +13,11 @@ export const HabitsPage = () => {
       {habits.length === 0 && <HabitsEmptyState />}
       <ul>
         {habits.length > 0 &&
-          habits.map(habit => <HabitItem key={habit.id} item={habit} />)}
+          habits.map(habit => (
+            <li>
+              <HabitItem key={habit.id} item={habit} />
+            </li>
+          ))}
       </ul>
       <AddNewHabitForm />
     </div>

@@ -19,7 +19,7 @@ export const HabitItem = ({ item }: Props) => {
     removeHabit(item.id);
   };
   return (
-    <li className={css.habitItem}>
+    <>
       <label>
         {item.title}
         <input
@@ -31,6 +31,6 @@ export const HabitItem = ({ item }: Props) => {
       <button className={css.deleteBtn} onClick={removeHabitHandler}>
         delete
       </button>
-    </li>
+    </>
   );
 };
