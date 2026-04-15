@@ -1,5 +1,5 @@
-import { Layout } from '../Layout/Layout';
+import { HabitsPage } from '../../pages/HabitPage/HabitsPage';
 
 export const App = () => {
-  return <Layout />;
+  return <HabitsPage />;
 };

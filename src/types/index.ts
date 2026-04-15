@@ -1,5 +1,5 @@
 export type Habit = {
-  habit: string;
+  title: string;
   isChecked: boolean;
   id: number;
 };

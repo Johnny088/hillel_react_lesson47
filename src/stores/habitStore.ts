@@ -7,11 +7,14 @@ export const useHabitStore = create<HabitStore>()(
     set => {
       return {
         habits: [],
-        addHabit: (newHabit: Habit) =>
+        addHabit: (habitTitle: string) =>
           set(state => {
-            if (newHabit.habit.trim() === '') {
-              return { habits: [...state.habits] };
-            }
+            const newHabit: Habit = {
+              title: habitTitle,
+              id: Date.now(),
+              isChecked: false,
+            };
+
             return { habits: [...state.habits, newHabit] };
           }),
 

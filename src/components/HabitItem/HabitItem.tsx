@@ -21,7 +21,7 @@ export const HabitItem = ({ item }: Props) => {
   return (
     <li className={css.habitItem}>
       <label>
-        {item.habit}
+        {item.title}
         <input
           type="checkbox"
           checked={item.isChecked}
