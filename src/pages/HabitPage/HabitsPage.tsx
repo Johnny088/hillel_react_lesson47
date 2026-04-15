@@ -15,8 +15,8 @@ export const HabitsPage = () => {
       ) : (
         <ul>
           {habits.map(habit => (
-            <li>
-              <HabitItem key={habit.id} item={habit} />
+            <li key={habit.id}>
+              <HabitItem item={habit} />
             </li>
           ))}
         </ul>
