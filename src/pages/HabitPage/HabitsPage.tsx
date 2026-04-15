@@ -10,15 +10,17 @@ export const HabitsPage = () => {
   return (
     <div className={css.container}>
       <h1>Todays tasks</h1>
-      {habits.length === 0 && <HabitsEmptyState />}
-      <ul>
-        {habits.length > 0 &&
-          habits.map(habit => (
+      {habits.length === 0 ? (
+        <HabitsEmptyState />
+      ) : (
+        <ul>
+          {habits.map(habit => (
             <li>
               <HabitItem key={habit.id} item={habit} />
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
       <AddNewHabitForm />
     </div>
   );
