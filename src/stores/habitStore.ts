@@ -1,7 +1,14 @@
 import { create } from 'zustand';
-import type { Habit, HabitStore } from '../types';
+import type { Habit } from '../types';
 import { persist } from 'zustand/middleware';
+export interface HabitStore {
+  habits: Habit[];
 
+  addHabit: (habit: string) => void;
+
+  changeBoxState: (id: number) => void;
+  removeHabit: (id: number) => void;
+}
 export const useHabitStore = create<HabitStore>()(
   persist(
     set => {
