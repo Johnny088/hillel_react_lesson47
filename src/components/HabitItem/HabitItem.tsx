@@ -1,6 +1,6 @@
 import {
   selectRemoveHabit,
-  selectToggleState,
+  selectToggleHabit,
   useHabitStore,
 } from '../../stores/habitStore';
 import type { Habit } from '../../types';
@@ -10,7 +10,7 @@ interface Props {
 }
 export const HabitItem = ({ item }: Props) => {
   const removeHabit = useHabitStore(selectRemoveHabit);
-  const changeBoxState = useHabitStore(selectToggleState);
+  const changeBoxState = useHabitStore(selectToggleHabit);
   const onChangeStatus = (): void => {
     changeBoxState(item.id);
   };

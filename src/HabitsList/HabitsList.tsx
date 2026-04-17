@@ -1,10 +1,10 @@
-import { AddNewHabitForm } from '../../components/AddNewHabitForm/AddNewHabitForm';
-import { HabitItem } from '../../components/HabitItem/HabitItem';
-import css from './habitsPage.module.css';
-import { selectHabits, useHabitStore } from '../../stores/habitStore';
-import { HabitsEmptyState } from '../../components/HabitsEmptyState/HabitsEmptyState';
+import { AddNewHabitForm } from '../components/AddNewHabitForm/AddNewHabitForm';
+import { HabitItem } from '../components/HabitItem/HabitItem';
+import { HabitsEmptyState } from '../components/HabitsEmptyState/HabitsEmptyState';
+import { selectHabits, useHabitStore } from '../stores/habitStore';
+import css from './habitsList.module.css';
 
-export const HabitsPage = () => {
+export const HabitsList = () => {
   const habits = useHabitStore(selectHabits);
 
   return (

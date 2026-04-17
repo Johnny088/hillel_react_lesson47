@@ -1,5 +1,5 @@
-import { HabitsPage } from '../../pages/HabitPage/HabitsPage';
+import { HabitsList } from '../../HabitsList/HabitsList';
 
 export const App = () => {
-  return <HabitsPage />;
+  return <HabitsList />;
 };

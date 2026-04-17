@@ -7,7 +7,7 @@ export const AddNewHabitForm = () => {
     if (title.trim() === '') {
       return;
     }
-    addHabit(title);
+    addHabit(title.trim());
   };
   return (
     <form action={submitHandler}>
