@@ -3,15 +3,16 @@ import { selectAddHabit, useHabitStore } from '../../stores/habitStore';
 export const AddNewHabitForm = () => {
   const addHabit = useHabitStore(selectAddHabit);
   const submitHandler = (formData: FormData) => {
-    const title = formData.get('habit') as string;
-    if (title.trim() === '') {
+    const title = formData.get('title') as string;
+    const habitTitle = title.trim();
+    if (habitTitle === '') {
       return;
     }
-    addHabit(title.trim());
+    addHabit(habitTitle);
   };
   return (
     <form action={submitHandler}>
-      <input name="habit" type="text" />
+      <input name="title" type="text" />
       <button className="submitBtn">add</button>
     </form>
   );

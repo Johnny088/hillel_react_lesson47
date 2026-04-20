@@ -4,7 +4,7 @@ import {
   useHabitStore,
 } from '../../stores/habitStore';
 import type { Habit } from '../../types';
-import css from './habitItem.module.css';
+import css from './HabitItem.module.css';
 interface Props {
   item: Habit;
 }
