@@ -1,8 +1,8 @@
-import { AddNewHabitForm } from '../components/AddNewHabitForm/AddNewHabitForm';
-import { HabitItem } from '../components/HabitItem/HabitItem';
-import { HabitsEmptyState } from '../components/HabitsEmptyState/HabitsEmptyState';
-import { selectHabits, useHabitStore } from '../stores/habitStore';
-import css from './habitsList.module.css';
+import { AddNewHabitForm } from '../AddNewHabitForm/AddNewHabitForm';
+import { HabitItem } from '../HabitItem/HabitItem';
+import { HabitsEmptyState } from '../HabitsEmptyState/HabitsEmptyState';
+import { selectHabits, useHabitStore } from '../../stores/habitStore';
+import css from './HabitsList.module.css';
 
 export const HabitsList = () => {
   const habits = useHabitStore(selectHabits);
